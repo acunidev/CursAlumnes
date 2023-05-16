@@ -10,7 +10,7 @@ public class testControllerUno {
 
   @GetMapping("hola")
   public String test() {
-    return "templates/view/hola.jsp";
+    return "aa";
   }
 
 }
