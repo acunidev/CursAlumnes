@@ -8,6 +8,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.List;
 import lombok.Data;
+import lombok.ToString;
 
 @Entity
 @Data
@@ -17,11 +18,12 @@ public class Curs {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long cursid;
-  
+
   private String nom;
   private String descripcio;
   private String url;
 
+  @ToString.Exclude
   @OneToMany(mappedBy = "curs")
   private List<Student> estudiants;
 }
