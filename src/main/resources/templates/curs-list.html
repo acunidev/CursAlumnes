@@ -1,41 +1,35 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Cursos</title>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
-          integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" rel="stylesheet">
+  <title>Cursos</title>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" rel="stylesheet">
 </head>
 <body>
 
 <header th:insert="~{htmlUtils/navbar}"></header>
 
-<h3>cursos</h3>
-<div class="table-responsive">
-    <table class="table table-striped table-hover">
-        <thead class="thead-dark">
-        <tr>
-            <th>CIF</th>
-            <th>ID</th>
-            <th>NAME</th>
-            <th>ADDRESS</th>
-            <th>STUDENT</th>
-        </tr>
-        </thead>
-        <tbody>
-        <!--/*@thymesVar id="curs" type="edu.maor.formaciones.entity.curs"*/-->
-        <tr th:each="curs : ${cursos}">
-            <td th:text="${curs.id}"></td>
-            <td th:text="${curs.cif}"></td>
-            <td th:text="${curs.getName}"></td>
-            <td th:text="${curs.getAddress}"></td>
-            <td th:text="${curs.getStudents}"></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+<h3 class="text-center mt-4">Cursos</h3>
+<section class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-4" th:each="curs : ${cursos}">
+      <div class="card text-dark bg-light mb-3">
+        <div class="card-header" th:text="${curs.nom}"></div>
+        <div class="card-body">
+          <p class="card-text" th:text="${curs.descripcio}"></p>
+          <a class="card-link" th:href="${curs.url}" th:text="${curs.url}"></a>
+          <h4 class="mt-3">Estudiants</h4>
+          <ul class="list-unstyled">
+            <li th:each="estudiant : ${curs.estudiants}" th:text="${estudiant.nom + ' ' + estudiant.cognom}"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div th:include="htmlUtils/footer"></div>
+<footer th:include="htmlUtils/footer"></footer>
 </body>
 </html>
