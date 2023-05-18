@@ -1,5 +1,5 @@
-# INSERT INTO curs(descripcio, nom, url) VALUES ('Access a dades','Modul 1','https://fpdual.jaumebalmes.net/');
-# INSERT INTO curs(descripcio, nom, url) VALUES ('Programacio orientada a Objectes','Modul 2','https://fpdual.jaumebalmes.net/');
+INSERT INTO curs(descripcio, nom, url) VALUES ('Access a dades','Modul 1','https://fpdual.jaumebalmes.net/');
+INSERT INTO curs(descripcio, nom, url) VALUES ('Programacio orientada a Objectes','Modul 2','https://fpdual.jaumebalmes.net/');
 INSERT INTO curs(descripcio, nom, url) VALUES ('Base de dades','Modul 3','https://fpdual.jaumebalmes.net/');
 INSERT INTO curs(descripcio, nom, url) VALUES ('Spring Boot','Modul 4','https://fpdual.jaumebalmes.net/');
 INSERT INTO curs(descripcio, nom, url) VALUES ('Encriptacio','Modul 5','https://fpdual.jaumebalmes.net/');
