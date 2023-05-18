@@ -1,5 +1,6 @@
-package com.vae.cursalumnes;
+package com.vae.cursalumnes.Initializer;
 
+import com.vae.cursalumnes.CursAlumnesApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
