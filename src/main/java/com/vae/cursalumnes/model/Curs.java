@@ -18,9 +18,9 @@ public class Curs {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long cursid;
   
-  private String titolCurs;
-  private String desCurs;
-  private String urlCurs;
+  private String nom;
+  private String descripcio;
+  private String url;
 
   @OneToMany(mappedBy = "curs")
   private List<Student> estudiants;
