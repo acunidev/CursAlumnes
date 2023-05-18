@@ -8,6 +8,7 @@
         integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" rel="stylesheet">
   <style>
     .myforms {
+      margin-top: 15px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: 8px;
@@ -18,8 +19,8 @@
 <header th:insert="~{htmlUtils/navbar}"></header>
 
 <div class="myforms">
-  <div th:include="htmlUtils/add-course" th:with="cursoAdd=${cursoAdd}"></div>
-  <div th:include="htmlUtils/add-student" th:with="studentAdd=${studentAdd},cursoList=${cursoList}"></div>
+  <div th:replace="htmlUtils/add-course" th:with="curs=${curs}"></div>
+  <div th:replace="htmlUtils/add-student" th:with="student=${student},cursoList=${cursoList}"></div>
 </div>
 <div th:include="htmlUtils/footer"></div>
 </body>
