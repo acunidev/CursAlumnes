@@ -1,29 +1,35 @@
-<!--<div th:include="htmlUtils/navbar.html"></div>-->
 <div class="container" xmlns:th="http://www.thymeleaf.org">
-  <h3>Registrar Curs</h3>
-  <!--/*@thymesVar id="cursoAdd" type="com.vae.cursalumnes.model.Curs"*/-->
-  <form method="POST" th:action="@{/api/cursos/add}" th:object="${cursoAdd}">
-
-
-    <div class="mb-3">
-      <label>
-        <input class="form-control" placeholder="Modul #" th:field="*{nom}" type="text">
-        <span style="color: red" th:errors="*{nom}"></span>
-      </label>
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title">Registrar Curs</h5>
     </div>
-    <div class="mb-3">
-      <label>
-        <input class="form-control" placeholder="Programació..." th:field="*{descripcio}"
-               type="text">
-        <span style="color: red" th:errors="*{descripcio}"></span>
-      </label>
+    <div class="card-body">
+      <!--/*@thymesVar id="curs" type="com.vae.cursalumnes.model.Curs"*/-->
+      <form method="POST" th:action="@{/moduls/cursos/add}" th:object="${curs}">
+        <div class="mb-3">
+          <label class="d-block">
+            <span class="float-start">Nom del modul</span>
+            <input class="form-control" placeholder="Modul #" th:field="*{nom}" type="text">
+            <span style="color: red" th:errors="*{nom}"></span>
+          </label>
+        </div>
+        <div class="mb-3">
+          <label class="d-block">
+            <span class="float-start">Descripcio del modul</span>
+            <input class="form-control" placeholder="Programació..." th:field="*{descripcio}" type="text">
+            <span style="color: red" th:errors="*{descripcio}"></span>
+          </label>
+        </div>
+        <div class="mb-3">
+          <label class="d-block">
+            <span class="float-start">Enllaç</span>
+            <input class="form-control" placeholder="https://fpdual.jaumebalmes.net/" th:field="*{url}" type="text">
+          </label>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-info col-5" type="submit">Enter</button>
+        </div>
+      </form>
     </div>
-    <div class="mb-3">
-      <label>
-        <input class="form-control" placeholder="https://fpdual.jaumebalmes.net/" th:field="*{url}" type="text">
-      </label>
-    </div>
-    <button class="btn btn-info col-2" type="submit">Enter</button>
-  </form>
+  </div>
 </div>
-<!--<div th:include="htmlUtils/footer"></div>-->
