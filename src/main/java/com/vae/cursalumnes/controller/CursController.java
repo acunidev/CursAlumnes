@@ -12,24 +12,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("api")
+@RequestMapping("moduls")
 public class CursController {
 
   @Autowired
   CursRepository cursRepository;
 
   @GetMapping("cursos")
-  public String getFirms(Model model) {
+  public String getCursos(Model model) {
     model.addAttribute("cursos", cursRepository.findAll());
     return "curs-list";
   }
 
   @PostMapping("cursos/add")
-  public String altaEmpresa(@Valid Curs curs, Errors errors) {
+  public String addCurso(@Valid Curs curs, Errors errors) {
     if (errors.hasErrors()) {
       return "formularis";
     }
     cursRepository.save(curs);
-    return "redirect:/api/cursos";
+
+    return "redirect:/moduls/cursos";
   }
 }
