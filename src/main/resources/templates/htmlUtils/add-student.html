@@ -2,44 +2,42 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>estudiants Registration</title>
+  <title>Students Registration</title>
   <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
         integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" rel="stylesheet">
 </head>
 <body>
 
-<header th:insert="~{htmlUtils/navbar}"></header>
+<!--<header th:insert="~{htmlUtils/navbar}"></header>-->
 
 <br>
 <div class="container">
   <h3>Register Estudiant</h3>
-  <!--/*@thymesVar id="estudiant" type="edu.maor.formaciones.entity.estudiant"*/-->
-  <form method="POST" th:action="@{/api/estudiants/registration}" th:object="${estudiant}">
+
+  <!--/*@thymesVar id="studentAdd" type="com.vae.cursalumnes.model.Student"*/-->
+  <form method="POST" th:action="@{/api/students/registerForm}" th:object="${studentAdd}">
     <div class="mb-3">
       <label>
-        <input class="form-control" placeholder="Eva" th:field="${estudiant.nom}" type="text">
-        <span style="color: red" th:errors="${estudiant.nom}" th:if="${#fields.hasErrors('nom')}"></span>
+        <input class="form-control" placeholder="Eva" th:field="*{nom}" type="text">
+        <span style="color: red" th:errors="*{nom}" th:if="${#fields.hasErrors('nom')}"></span>
       </label>
     </div>
     <div class="mb-3">
       <label>
-        <input class="form-control" placeholder="Cuoñon" th:field="${estudiant.cognom}" type="text">
-        <span style="color: red" th:errors="${estudiant.cognom}" th:if="${#fields.hasErrors('cognom')}"></span>
+        <input class="form-control" placeholder="Cuoñon" th:field="*{cognom}" type="text">
+        <span style="color: red" th:errors="*{cognom}" th:if="${#fields.hasErrors('cognom')}"></span>
       </label>
     </div>
     <div class="mb-3">
       <label>
-        <select class="form-select" th:field="${estudiant.cicle}">
-          <option th:value="DAM">DAM</option>
-          <option th:value="DAW">DAW</option>
-          <option th:value="ASIX">ASIX</option>
-          <option th:value="SMIX">SMIX</option>
+        <select class="form-select" th:field="*{curs}">
+          <option th:each="curs : ${cursosList}" th:text="${curs.nom}" th:value="${curs.nom}"></option>
         </select>
       </label>
     </div>
-    <button class="btn btn-info col-2" type="submit">Enter</button>
+    <button class="btn btn-info col-2" type="submit">Registar</button>
   </form>
 </div>
-<div th:include="htmlUtils/footer"></div>
+<!--<div th:include="htmlUtils/footer"></div>-->
 </body>
 </html>
