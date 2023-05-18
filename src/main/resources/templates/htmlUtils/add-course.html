@@ -1,0 +1,28 @@
+
+<div class="container">
+  <h3>Register Firm</h3>
+  <!--/*@thymesVar id="firm" type="edu.maor.formaciones.entity.Firm"*/-->
+  <form method="POST" th:action="@{/api/firm/registration}" th:object="${firm}">
+
+    <div class="mb-3">
+      <label>
+        <input class="form-control" placeholder="P7460162F" th:field="${firm.cif}" type="text">
+      </label>
+    </div>
+    <div class="mb-3">
+      <label>
+        <input class="form-control" placeholder="Coctelea" th:field="${firm.name}" type="text">
+        <span style="color: red" th:errors="${firm.name}" th:if="${#fields.hasErrors('name')}"></span>
+      </label>
+    </div>
+    <div class="mb-3">
+      <label>
+        <input class="form-control" placeholder="Passeig de Gràcia, 8" th:field="${firm.address}"
+               type="text">
+        <span style="color: red" th:errors="${firm.address}" th:if="${#fields.hasErrors('address')}"></span>
+      </label>
+    </div>
+    <button class="btn btn-info col-2" type="submit">Enter</button>
+  </form>
+</div>
+<div th:include="htmlUtils/footer"></div>
