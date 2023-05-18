@@ -3,7 +3,7 @@ INSERT INTO curs(descripcio, nom, url) VALUES ('Programacio orientada a Objectes
 INSERT INTO curs(descripcio, nom, url) VALUES ('Base de dades','Modul 3','https://fpdual.jaumebalmes.net/');
 INSERT INTO curs(descripcio, nom, url) VALUES ('Spring Boot','Modul 4','https://fpdual.jaumebalmes.net/');
 INSERT INTO curs(descripcio, nom, url) VALUES ('Encriptacio','Modul 5','https://fpdual.jaumebalmes.net/');
-INSERT INTO student(cognom, nom, curs_cursid) VALUES ('Conilleres','Alex',3);
+INSERT INTO student(cognom, nom, curs_cursid) VALUES ('Cunillera','Alex',3);
 INSERT INTO student(cognom, nom, curs_cursid) VALUES ('Martorell','Edu',5);
 INSERT INTO student(cognom, nom, curs_cursid) VALUES ('Chacon','Victor',2);
 INSERT INTO student(cognom, nom, curs_cursid) VALUES ('Muldowney','Juliette',1);
