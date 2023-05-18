@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Navbar Example</title>
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
-          integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" rel="stylesheet">
-    <script th:src="@{/js/navbar.js}"></script>
+  <meta charset="UTF-8">
+  <title>Navbar Example</title>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" rel="stylesheet">
+  <script th:src="@{/js/navbar.js}"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">API Lenta</a>
-        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
-                data-bs-target="#navbarNav"
-                data-bs-toggle="collapse" type="button">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/api/students/add" id="nou-student">Add Student</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/api/firms/add" id="nova-firm">Add Firm</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/api/students" id="lista-alumnos">Student list</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/api/firms" id="lista-firm">Firm list</a>
-                </li>
-            </ul>
-        </div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/api/registerForm">JaumeBalmes</a>
+    <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+            data-bs-target="#navbarNav"
+            data-bs-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/api/registerForm" id="nou-student">Registrar-se</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/alumnes/students" id="lista-alumnos">Llista Estudiants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/moduls/cursos" id="lista-firm">Llista Cursos</a>
+        </li>
+      </ul>
     </div>
+  </div>
 </nav>
 <script crossorigin="anonymous"
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
