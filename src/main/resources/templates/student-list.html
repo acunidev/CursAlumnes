@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Estudiants</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+</head>
+<body>
+
+<div th:include="htmlUtils/navbar"></div>
+
+
+<h3>estudiants</h3>
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Cognom</th>
+            <th>Curs</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--/*@thymesVar id="estudiant" type="edu.maor.formaciones.entity.estudiant"*/-->
+        <tr th:each="estudiant : ${estudiants}">
+            <td th:text="${estudiant.id}"></td>
+            <td th:text="${estudiant.nom}"></td>
+            <td th:text="${estudiant.cognom}"></td>
+            <td th:text="${estudiant.getCurs}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:include="htmlUtils/footer"></div>
+</body>

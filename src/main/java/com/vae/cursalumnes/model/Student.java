@@ -16,8 +16,8 @@ public class Student {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long studentId;
-  private String estudiantNom;
-  private String estudiantCognom;
+  private String nom;
+  private String cognom;
   
   @ManyToOne()
   private Curs curs;
