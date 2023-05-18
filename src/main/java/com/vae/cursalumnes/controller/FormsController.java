@@ -22,12 +22,11 @@ public class FormsController {
 
   @GetMapping("registerForm")
   public String mostrarFormulariProjecte(Model model) {
-    Student student = new Student();
-    model.addAttribute("studentAdd", student);
+    model.addAttribute("curs", new Curs());
+    final Student attributeValue = new Student();
+    model.addAttribute("student", attributeValue);
     model.addAttribute("cursosList", cursRepository.findAll());
 
-    Curs curs = new Curs();
-    model.addAttribute("cursoAdd", curs);
     return "formularis";
   }
 
