@@ -1,8 +1,10 @@
 package com.vae.cursalumnes.controller;
 
+import com.vae.cursalumnes.Repository.CursRepository;
 import com.vae.cursalumnes.Repository.StudentRepository;
 import com.vae.cursalumnes.model.Student;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -14,31 +16,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("api")
 public class StudentController {
 
-  final StudentRepository studentRepository;
+  @Autowired
+  StudentRepository studentRepository;
 
-  public StudentController(StudentRepository studentRepository) {
-    this.studentRepository = studentRepository;
-  }
+  @Autowired
+  CursRepository cursRepository;
 
-  @GetMapping("estudiants")
+  @GetMapping("students")
   public String getStudents(Model model) {
     model.addAttribute("students", studentRepository.findAll());
     return "student-list";
   }
 
-  @GetMapping("add")
-  public String mostrarFormulariProjecte(Model model) {
-    Student student = new Student();
-    model.addAttribute("student", student);
-    return "formularis";
-  }
-
-  @PostMapping("students/registration")
+  @PostMapping("students/add")
   public String altaProjecte(@Valid Student student, Errors errors) {
     if (errors.hasErrors()) {
       return "formularis";
     }
     studentRepository.save(student);
-    return "redirect:/api/estudiants";
+    return "redirect:/api/students";
   }
 }
