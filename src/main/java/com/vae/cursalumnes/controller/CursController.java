@@ -3,7 +3,6 @@ package com.vae.cursalumnes.controller;
 import com.vae.cursalumnes.Repository.CursRepository;
 import com.vae.cursalumnes.model.Curs;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -15,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("moduls")
 public class CursController {
 
-  @Autowired
-  CursRepository cursRepository;
+  private final CursRepository cursRepository;
+
+  public CursController(CursRepository cursRepository) {
+    this.cursRepository = cursRepository;
+  }
 
   @GetMapping("cursos")
   public String getCursos(Model model) {
