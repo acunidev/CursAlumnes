@@ -1,7 +1,7 @@
 package com.vae.cursalumnes.controller;
 
-import com.vae.cursalumnes.Repository.StudentRepository;
 import com.vae.cursalumnes.model.Student;
+import com.vae.cursalumnes.service.StudentService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,12 +16,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("alumnes")
 public class StudentController {
 
+  private final StudentService studentService;
+
   @Autowired
-  StudentRepository studentRepository;
+  public StudentController(StudentService studentService) {
+    this.studentService = studentService;
+  }
 
   @GetMapping("students")
   public String getStudents(Model model) {
-    model.addAttribute("students", studentRepository.findAll());
+    model.addAttribute("students", studentService.getStudents());
     return "student-list";
   }
 
@@ -30,7 +34,7 @@ public class StudentController {
     if (errors.hasErrors()) {
       return "formularis";
     }
-    studentRepository.save(student);
+    studentService.saveStudent(student);
     return "redirect:/alumnes/students";
   }
 
